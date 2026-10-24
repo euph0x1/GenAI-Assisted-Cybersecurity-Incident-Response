@@ -1,0 +1,9 @@
+pandas>=2.0
+numpy
+scikit-learn
+xgboost
+streamlit
+plotly
+tqdm
+google-genai
+python-dotenv
