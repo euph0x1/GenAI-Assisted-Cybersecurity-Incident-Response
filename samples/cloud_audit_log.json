@@ -1,0 +1,14 @@
+SYNTHETIC SAMPLE - fictional data for demonstration only. IPs use documentation ranges; 123456789012 is the standard placeholder account id.
+
+TICKET INC-20590: Finance reports unexpected reads of payroll files in cloud storage. Note from cloud team: user dev-sam normally signs in from 192.0.2.77 and always uses MFA.
+
+{"Records": [
+ {"eventTime": "2026-10-07T03:12:44Z", "eventName": "ConsoleLogin", "userIdentity": {"type": "IAMUser", "userName": "dev-sam"}, "sourceIPAddress": "203.0.113.120", "additionalEventData": {"MFAUsed": "No"}, "responseElements": {"ConsoleLogin": "Success"}},
+ {"eventTime": "2026-10-07T03:14:02Z", "eventName": "CreateAccessKey", "userIdentity": {"type": "IAMUser", "userName": "dev-sam"}, "sourceIPAddress": "203.0.113.120", "requestParameters": {"userName": "dev-sam"}},
+ {"eventTime": "2026-10-07T03:16:30Z", "eventName": "CreateUser", "userIdentity": {"type": "IAMUser", "userName": "dev-sam"}, "sourceIPAddress": "203.0.113.120", "requestParameters": {"userName": "svc-backup-sync"}},
+ {"eventTime": "2026-10-07T03:17:05Z", "eventName": "AttachUserPolicy", "userIdentity": {"type": "IAMUser", "userName": "dev-sam"}, "sourceIPAddress": "203.0.113.120", "requestParameters": {"userName": "svc-backup-sync", "policyArn": "arn:aws:iam::aws:policy/AdministratorAccess"}},
+ {"eventTime": "2026-10-07T03:21:48Z", "eventName": "ListBuckets", "userIdentity": {"type": "IAMUser", "userName": "svc-backup-sync"}, "sourceIPAddress": "203.0.113.121"},
+ {"eventTime": "2026-10-07T03:22:10Z", "eventName": "GetObject", "userIdentity": {"type": "IAMUser", "userName": "svc-backup-sync"}, "sourceIPAddress": "203.0.113.121", "requestParameters": {"bucketName": "contoso-demo-finance-reports", "key": "payroll/2026-08.csv"}},
+ {"eventTime": "2026-10-07T03:22:11Z", "eventName": "GetObject", "userIdentity": {"type": "IAMUser", "userName": "svc-backup-sync"}, "sourceIPAddress": "203.0.113.121", "requestParameters": {"bucketName": "contoso-demo-finance-reports", "key": "payroll/2026-09.csv"}},
+ {"eventTime": "2026-10-07T03:22:12Z", "eventName": "GetObject", "userIdentity": {"type": "IAMUser", "userName": "svc-backup-sync"}, "sourceIPAddress": "203.0.113.121", "requestParameters": {"bucketName": "contoso-demo-finance-reports", "key": "payroll/2026-10.csv"}}
+]}
