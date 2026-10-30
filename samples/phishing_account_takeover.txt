@@ -1,0 +1,21 @@
+SYNTHETIC SAMPLE - fictional data for demonstration only. IPs use documentation ranges; domains use .example.
+
+TICKET INC-20418 | opened by: helpdesk | priority: not set
+User Priya Nair (priya.nair@contoso-demo.example) says she typed her password into a "document sharing" page after an email on 2026-10-06 and later noticed emails she had never opened were marked as read.
+
+--- Email gateway log (UTC) ---
+2026-10-06 09:12:41 DELIVERED from=docs-notify@sharepoint-docs-secure.example to=priya.nair@contoso-demo.example subject="Q3 vendor contract - action required" spf=fail dkim=none
+2026-10-06 09:12:41 URL_FOUND hxxps://sharepoint-docs-secure[.]example/view?id=88f1c2 verdict=unknown
+
+--- Web proxy log (UTC) ---
+2026-10-06 09:14:07 GET https://sharepoint-docs-secure.example/view?id=88f1c2 user=pnair src=10.20.4.37 status=200
+2026-10-06 09:14:52 POST https://sharepoint-docs-secure.example/auth/login user=pnair src=10.20.4.37 status=302 bytes_out=412
+
+--- Identity provider sign-in log (UTC) ---
+2026-10-05 08:55:03 SIGNIN_SUCCESS user=priya.nair@contoso-demo.example ip=192.0.2.14 app=Outlook Web mfa=satisfied device=corp-laptop-118
+2026-10-06 09:31:18 SIGNIN_SUCCESS user=priya.nair@contoso-demo.example ip=203.0.113.58 app=Outlook Web mfa=not_required device=unknown
+2026-10-06 09:33:02 SIGNIN_SUCCESS user=priya.nair@contoso-demo.example ip=203.0.113.58 app=Exchange Online mfa=not_required device=unknown
+
+--- Mailbox audit log (UTC) ---
+2026-10-06 09:35:40 New-InboxRule user=priya.nair@contoso-demo.example name="sync" action=ForwardTo:archive.reports@mail-relay-demo.example condition=subject contains "invoice" or "payment"
+2026-10-06 09:36:11 MailItemsAccessed user=priya.nair@contoso-demo.example ip=203.0.113.58 count=214
