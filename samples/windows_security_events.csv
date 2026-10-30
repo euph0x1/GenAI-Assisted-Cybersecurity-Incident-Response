@@ -1,0 +1,15 @@
+SYNTHETIC SAMPLE - fictional data for demonstration only. IPs use documentation ranges.
+
+timestamp_utc,host,event_id,description,account,source_ip,logon_type
+2026-10-08T22:01:14Z,SRV-APP-03,4625,An account failed to log on,administrator,203.0.113.200,10
+2026-10-08T22:01:31Z,SRV-APP-03,4625,An account failed to log on,admin,203.0.113.200,10
+2026-10-08T22:01:49Z,SRV-APP-03,4625,An account failed to log on,backup,203.0.113.200,10
+2026-10-08T22:02:12Z,SRV-APP-03,4625,An account failed to log on,administrator,203.0.113.200,10
+2026-10-08T22:02:40Z,SRV-APP-03,4625,An account failed to log on,administrator,203.0.113.200,10
+2026-10-08T22:03:05Z,SRV-APP-03,4625,An account failed to log on,administrator,203.0.113.200,10
+2026-10-08T22:04:51Z,SRV-APP-03,4624,An account was successfully logged on,administrator,203.0.113.200,10
+2026-10-08T22:09:37Z,SRV-APP-03,4720,A user account was created,svc_helpdesk,,
+2026-10-08T22:10:02Z,SRV-APP-03,4732,A member was added to a security-enabled local group (Administrators),svc_helpdesk,,
+2026-10-08T22:15:20Z,SRV-APP-03,1102,The audit log was cleared,administrator,,
+
+NOTE: logon_type 10 = remote interactive (RDP). SRV-APP-03 is not normally reachable from the internet.
