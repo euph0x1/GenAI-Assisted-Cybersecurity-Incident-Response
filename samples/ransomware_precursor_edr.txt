@@ -1,0 +1,12 @@
+SYNTHETIC SAMPLE - fictional data for demonstration only. IPs use documentation ranges; the hash is made up.
+
+EDR ALERT EXPORT | primary host: FIN-WS-22 | user: CONTOSO\jlee | date: 2026-10-09 (UTC)
+
+13:58:02 PROCESS_START winword.exe pid=4412 file="Invoice_Oct.docm" sha256=9b1f4c7a0d2e58a3f6c1b7e4d90a2c35e8f1a6b3c7d4e90f2a5b8c1d3e6f7a49
+14:02:11 PROCESS_START powershell.exe pid=5120 parent=winword.exe cmdline="powershell.exe -nop -w hidden -enc SQBFAFgAIAAo..." (truncated by sensor)
+14:02:14 NETWORK_CONNECT pid=5120 dst=203.0.113.9:443 proto=tcp
+14:09:47 PROCESS_ACCESS src=rundll32.exe pid=6033 target=lsass.exe access=PROCESS_VM_READ cmdline="rundll32.exe C:\Windows\System32\comsvcs.dll, MiniDump ..."
+14:11:20 LOGON_SUCCESS user=CONTOSO\svc_backup type=network src=FIN-WS-22 dst=FS-02
+14:19:05 PROCESS_START vssadmin.exe pid=7188 host=FS-02 parent=cmd.exe cmdline="vssadmin.exe delete shadows /all /quiet"
+14:20:31 FILE_ACTIVITY host=FS-02 pid=7302 renamed=1842 files extension=.locked window=4m
+14:24:50 FILE_CREATE host=FS-02 path="D:\Shares\Finance\README_RESTORE.txt"
