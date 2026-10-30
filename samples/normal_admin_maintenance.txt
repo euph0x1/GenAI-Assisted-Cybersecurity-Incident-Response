@@ -1,0 +1,14 @@
+SYNTHETIC SAMPLE - fictional data for demonstration only. All addresses are private ranges.
+
+CHANGE RECORD CHG-6102 (approved)
+Monthly patching of file servers FS-01 and FS-02 on 2026-10-10, 01:00-03:00 UTC, by the sysadmin team using account CONTOSO\patch_admin from the jump host JUMP-01 (10.0.1.5).
+
+EDR ALERTS (UTC, 2026-10-10)
+01:02:11 REMOTE_EXEC tool=psexec.exe src=JUMP-01 dst=FS-01 user=CONTOSO\patch_admin rule=LATERAL-02
+01:02:40 SERVICE_INSTALL name=PSEXESVC host=FS-01 rule=SVC-INSTALL-09
+01:05:03 POWERSHELL host=FS-01 user=CONTOSO\patch_admin cmdline="Install-WindowsUpdate -AcceptAll -AutoReboot"
+01:41:55 REBOOT host=FS-01 initiated_by=CONTOSO\patch_admin
+02:03:10 REMOTE_EXEC tool=psexec.exe src=JUMP-01 dst=FS-02 user=CONTOSO\patch_admin rule=LATERAL-02
+02:03:40 SERVICE_INSTALL name=PSEXESVC host=FS-02 rule=SVC-INSTALL-09
+02:44:18 REBOOT host=FS-02 initiated_by=CONTOSO\patch_admin
+03:01:00 SERVICE_REMOVE name=PSEXESVC host=FS-02
