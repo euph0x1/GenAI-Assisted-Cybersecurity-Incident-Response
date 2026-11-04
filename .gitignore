@@ -1,0 +1,52 @@
+# Secrets and local configuration
+.env*
+!.env.example
+.streamlit/secrets.toml
+
+# Python
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local application cache
+/cache/*
+!/cache/.gitkeep
+
+# Downloaded source data and generated datasets
+/data/*
+!/data/.gitkeep
+
+# Generated model artifacts
+/models/*
+!/models/.gitkeep
+
+# Generated reports, predictions, and labeling sheets
+/results/*
+!/results/.gitkeep
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
